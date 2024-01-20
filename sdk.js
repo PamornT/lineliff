@@ -20,16 +20,16 @@
                         }
                         for (u[u[s]] = l / a | 0, u[u[s]] = l, i = 0; i < u[s];) {
                             var w = u.slice(i, i += 16),
-                                b = f;
+                                m = f;
                             for (f = f.slice(0, 8), r = 0; r < 64; r++) {
-                                var m = w[r - 15],
+                                var b = w[r - 15],
                                     g = w[r - 2],
                                     y = f[0],
                                     I = f[4],
-                                    S = f[7] + (n(I, 6) ^ n(I, 11) ^ n(I, 25)) + (I & f[5] ^ ~I & f[6]) + d[r] + (w[r] = r < 16 ? w[r] : w[r - 16] + (n(m, 7) ^ n(m, 18) ^ m >>> 3) + w[r - 7] + (n(g, 17) ^ n(g, 19) ^ g >>> 10) | 0);
+                                    S = f[7] + (n(I, 6) ^ n(I, 11) ^ n(I, 25)) + (I & f[5] ^ ~I & f[6]) + d[r] + (w[r] = r < 16 ? w[r] : w[r - 16] + (n(b, 7) ^ n(b, 18) ^ b >>> 3) + w[r - 7] + (n(g, 17) ^ n(g, 19) ^ g >>> 10) | 0);
                                 (f = [S + ((n(y, 2) ^ n(y, 13) ^ n(y, 22)) + (y & f[1] ^ y & f[2] ^ f[1] & f[2])) | 0].concat(f))[4] = f[4] + S | 0
                             }
-                            for (r = 0; r < 8; r++) f[r] = f[r] + b[r] | 0
+                            for (r = 0; r < 8; r++) f[r] = f[r] + m[r] | 0
                         }
                         for (r = 0; r < 8; r++)
                             for (i = 3; i + 1; i--) {
@@ -67,7 +67,7 @@
     return (() => {
         "use strict";
         n.d(r, {
-            default: () => oo
+            default: () => ao
         });
         var e = "undefined" != typeof globalThis && globalThis || "undefined" != typeof self && self || void 0 !== e && e,
             t = "URLSearchParams" in e,
@@ -141,16 +141,16 @@
             return t.readAsArrayBuffer(e), n
         }
 
-        function b(e) {
+        function m(e) {
             if (e.slice) return e.slice(0);
             var t = new Uint8Array(e.byteLength);
             return t.set(new Uint8Array(e)), t.buffer
         }
 
-        function m() {
+        function b() {
             return this.bodyUsed = !1, this._initBody = function(e) {
                 var n;
-                this.bodyUsed = this.bodyUsed, this._bodyInit = e, e ? "string" == typeof e ? this._bodyText = e : o && Blob.prototype.isPrototypeOf(e) ? this._bodyBlob = e : a && FormData.prototype.isPrototypeOf(e) ? this._bodyFormData = e : t && URLSearchParams.prototype.isPrototypeOf(e) ? this._bodyText = e.toString() : s && o && ((n = e) && DataView.prototype.isPrototypeOf(n)) ? (this._bodyArrayBuffer = b(e.buffer), this._bodyInit = new Blob([this._bodyArrayBuffer])) : s && (ArrayBuffer.prototype.isPrototypeOf(e) || u(e)) ? this._bodyArrayBuffer = b(e) : this._bodyText = e = Object.prototype.toString.call(e) : this._bodyText = "", this.headers.get("content-type") || ("string" == typeof e ? this.headers.set("content-type", "text/plain;charset=UTF-8") : this._bodyBlob && this._bodyBlob.type ? this.headers.set("content-type", this._bodyBlob.type) : t && URLSearchParams.prototype.isPrototypeOf(e) && this.headers.set("content-type", "application/x-www-form-urlencoded;charset=UTF-8"))
+                this.bodyUsed = this.bodyUsed, this._bodyInit = e, e ? "string" == typeof e ? this._bodyText = e : o && Blob.prototype.isPrototypeOf(e) ? this._bodyBlob = e : a && FormData.prototype.isPrototypeOf(e) ? this._bodyFormData = e : t && URLSearchParams.prototype.isPrototypeOf(e) ? this._bodyText = e.toString() : s && o && ((n = e) && DataView.prototype.isPrototypeOf(n)) ? (this._bodyArrayBuffer = m(e.buffer), this._bodyInit = new Blob([this._bodyArrayBuffer])) : s && (ArrayBuffer.prototype.isPrototypeOf(e) || u(e)) ? this._bodyArrayBuffer = m(e) : this._bodyText = e = Object.prototype.toString.call(e) : this._bodyText = "", this.headers.get("content-type") || ("string" == typeof e ? this.headers.set("content-type", "text/plain;charset=UTF-8") : this._bodyBlob && this._bodyBlob.type ? this.headers.set("content-type", this._bodyBlob.type) : t && URLSearchParams.prototype.isPrototypeOf(e) && this.headers.set("content-type", "application/x-www-form-urlencoded;charset=UTF-8"))
             }, o && (this.blob = function() {
                 var e = p(this);
                 if (e) return e;
@@ -249,7 +249,7 @@
             return new y(this, {
                 body: this._bodyInit
             })
-        }, m.call(y.prototype), m.call(S.prototype), S.prototype.clone = function() {
+        }, b.call(y.prototype), b.call(S.prototype), S.prototype.clone = function() {
             return new S(this._bodyInit, {
                 status: this.status,
                 statusText: this.statusText,
@@ -276,7 +276,7 @@
         var E = e.DOMException;
         try {
             new E
-        } catch (ao) {
+        } catch (so) {
             (E = function(e, t) {
                 this.message = e, this.name = t;
                 var n = Error(e);
@@ -511,32 +511,32 @@
             return a
         }
 
-        function j(e, t, n) {
+        function F(e, t, n) {
             if (n || 2 === arguments.length)
                 for (var r, i = 0, o = t.length; i < o; i++) !r && i in t || (r || (r = Array.prototype.slice.call(t, 0, i)), r[i] = t[i]);
             return e.concat(r || Array.prototype.slice.call(t))
         }
-        var F;
+        var j;
         Object.create;
         ! function(e) {
             e[e.DEBUG = 1] = "DEBUG", e[e.INFO = 2] = "INFO", e[e.WARN = 3] = "WARN", e[e.ERROR = 4] = "ERROR"
-        }(F || (F = {}));
+        }(j || (j = {}));
         var N, U = function() {
                 function e(e) {
-                    void 0 === e && (e = F.INFO), this.logLevel = e, this._debug = console.debug, this._info = console.info, this._warn = console.warn, this._error = console.error
+                    void 0 === e && (e = j.INFO), this.logLevel = e, this._debug = console.debug, this._info = console.info, this._warn = console.warn, this._error = console.error
                 }
                 return e.prototype.debug = function() {
                     for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
-                    this.logLevel <= F.DEBUG && (e.unshift("[DEBUG]"), this._debug.apply(this, j([], x(e), !1)))
+                    this.logLevel <= j.DEBUG && (e.unshift("[DEBUG]"), this._debug.apply(this, F([], x(e), !1)))
                 }, e.prototype.info = function() {
                     for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
-                    this.logLevel <= F.INFO && (e.unshift("[INFO]"), this._info.apply(this, j([], x(e), !1)))
+                    this.logLevel <= j.INFO && (e.unshift("[INFO]"), this._info.apply(this, F([], x(e), !1)))
                 }, e.prototype.warn = function() {
                     for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
-                    this.logLevel <= F.WARN && (e.unshift("[WARN]"), this._warn.apply(this, j([], x(e), !1)))
+                    this.logLevel <= j.WARN && (e.unshift("[WARN]"), this._warn.apply(this, F([], x(e), !1)))
                 }, e.prototype.error = function() {
                     for (var e = [], t = 0; t < arguments.length; t++) e[t] = arguments[t];
-                    this.logLevel <= F.ERROR && (e.unshift("[ERROR]"), this._error.apply(this, j([], x(e), !1)))
+                    this.logLevel <= j.ERROR && (e.unshift("[ERROR]"), this._error.apply(this, F([], x(e), !1)))
                 }, e
             }(),
             R = new U(Number("3")),
@@ -698,25 +698,25 @@
             var t = e.replace("#", "").match(/.{2}/g) || [];
             if (4 !== t.length) return R.warn("convertArgbToRgba: Received invalid ARGB color"), "";
             var n = function(e) {
-                    var t = be(e);
+                    var t = me(e);
                     return Math.round(t / 255 * 100) / 100
                 }(t[0]),
-                r = be(t[1]),
-                i = be(t[2]),
-                o = be(t[3]);
+                r = me(t[1]),
+                i = me(t[2]),
+                o = me(t[3]);
             return "rgba(".concat(r, ", ").concat(i, ", ").concat(o, ", ").concat(n, ")")
         }
 
-        function be(e) {
+        function me(e) {
             return parseInt(e, 16)
         }
 
-        function me(e) {
+        function be(e) {
             var t = e.replace("#", "").match(/.{2}/g) || [];
             if (3 !== t.length) return R.warn("convertArgbToRgba: Received invalid hex color"), "";
-            var n = be(t[0]),
-                r = be(t[1]),
-                i = be(t[2]);
+            var n = me(t[0]),
+                r = me(t[1]),
+                i = me(t[2]);
             return "".concat(n, ", ").concat(r, ", ").concat(i)
         }
 
@@ -813,7 +813,7 @@
             return t
         }
 
-        function je(e) {
+        function Fe(e) {
             var t = new URL(e),
                 n = t.hash.slice(1).split("&").filter((function(e) {
                     return !se.some((function(t) {
@@ -823,7 +823,7 @@
             return t.hash = n, t.toString()
         }
 
-        function Fe(e) {
+        function je(e) {
             var t, n, r = new URL(e);
             return r.toString().replace(new RegExp(String.raw(Ue || (t = ["^", ""], n = ["^", ""], Object.defineProperty ? Object.defineProperty(t, "raw", {
                 value: n
@@ -1118,7 +1118,7 @@
             }
         }(H);
 
-        function bt() {
+        function mt() {
             Object.keys(oe).forEach((function(e) {
                     ft(oe[e])
                 })),
@@ -1130,7 +1130,7 @@
                 }()
         }
 
-        function mt() {
+        function bt() {
             return !!ut()
         }! function(e) {
             function t() {
@@ -1144,13 +1144,13 @@
                 configurable: !0
             }), t.prototype.install = function() {
                 return function() {
-                    return mt()
+                    return bt()
                 }
             }
         }(H);
 
         function gt() {
-            return "2.23.0"
+            return "2.23.1"
         }! function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -1163,7 +1163,7 @@
                 configurable: !0
             }), t.prototype.install = function() {
                 return function() {
-                    return "2.23.0"
+                    return "2.23.1"
                 }
             }
         }(H);
@@ -1276,7 +1276,7 @@
         function Pt(e, t, n) {
             var r = _t(e),
                 i = n || e;
-            if (!r || !r.permission) return {
+            if (!r) return {
                 available: !1,
                 error: {
                     code: X,
@@ -1284,23 +1284,19 @@
                 }
             };
             var o = r.minVer,
-                a = r.unsupportedFromVer;
-            if (Je()) {
-                var s = function(e, t) {
+                a = r.unsupportedFromVer,
+                s = !o || function(e, t) {
                     var n = Et();
                     return !!n && !(t && ve(n, t) > 0) && ve(n, e) >= 0
-                }(o, a);
-                return s ? {
-                    available: !0
-                } : {
-                    available: !1,
-                    error: {
-                        code: X,
-                        message: "".concat(i, " is unavailable in this client version.")
-                    }
+                }(o, a),
+                c = Je();
+            return c && !s ? {
+                available: !1,
+                error: {
+                    code: X,
+                    message: "".concat(i, " is unavailable in this client version.")
                 }
-            }
-            return t ? {
+            } : r.permission ? c && s || t ? {
                 available: !0
             } : {
                 available: !1,
@@ -1308,10 +1304,16 @@
                     code: X,
                     message: "".concat(i, " is not allowed in external browser")
                 }
+            } : {
+                available: !1,
+                error: {
+                    code: X,
+                    message: "".concat(i, " is not allowed in this LIFF app")
+                }
             }
         }
         var kt = function() {
-                return mt() ? !Ve() && He() ? {
+                return bt() ? !Ve() && He() ? {
                     available: !1,
                     error: {
                         code: X,
@@ -1349,7 +1351,7 @@
                             code: X,
                             message: "this api can be only called in parent window"
                         }
-                    } : mt() ? Pt("shareTargetPicker", !0) : {
+                    } : bt() ? Pt("shareTargetPicker", !0) : {
                         available: !1,
                         error: {
                             code: q,
@@ -1377,7 +1379,7 @@
                 },
                 subwindowOpen: kt,
                 scanCodeV2: function() {
-                    if (!mt()) return {
+                    if (!bt()) return {
                         available: !1,
                         error: {
                             code: q,
@@ -1420,7 +1422,7 @@
                             message: "this api can be only called in parent window"
                         }
                     };
-                    if (!mt()) return {
+                    if (!bt()) return {
                         available: !1,
                         error: {
                             code: q,
@@ -1444,7 +1446,7 @@
                             message: "this api can be only called in parent window"
                         }
                     };
-                    if (!mt()) return {
+                    if (!bt()) return {
                         available: !1,
                         error: {
                             code: q,
@@ -1469,7 +1471,7 @@
                     if (!t.available) throw Ce(t.error.code, t.error.message)
                 }
             },
-            jt = {
+            Ft = {
                 scanCode: xt(Lt.scanCode),
                 getAdvertisingId: xt(Lt.getAdvertisingId),
                 bluetoothLeFunction: xt(Lt.bluetoothLeFunction),
@@ -1483,7 +1485,7 @@
                 internalCreateShortcutOnHomeScreen: xt(Lt.internalCreateShortcutOnHomeScreen)
             };
 
-        function Ft(e) {
+        function jt(e) {
             if (! function(e) {
                     return At.some((function(t) {
                         return t === e
@@ -1504,14 +1506,14 @@
                 configurable: !0
             }), t.prototype.install = function() {
                 return function(e) {
-                    return Ft(e)
+                    return jt(e)
                 }
             }
         }(H);
         var Nt = function() {
                 function e() {}
                 return e.prototype.invoke = function(e) {
-                    var t = jt[e];
+                    var t = Ft[e];
                     return !!t && (t(), !0)
                 }, e
             }(),
@@ -1525,7 +1527,7 @@
             }(),
             Rt = function() {
                 function e(t) {
-                    ve("2.23.0", e.SDK_VERSION_SUPPORTING_NEW) >= 0 ? this.impl = new Nt : this.impl = new Ut(t)
+                    ve("2.23.1", e.SDK_VERSION_SUPPORTING_NEW) >= 0 ? this.impl = new Nt : this.impl = new Ut(t)
                 }
                 return Object.defineProperty(e, "SDK_VERSION_SUPPORTING_NEW", {
                     get: function() {
@@ -1700,7 +1702,7 @@
         }
 
         function Ht() {
-            bt()
+            mt()
         }! function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -2239,7 +2241,7 @@
             R.debug("[js postMessage to client]", e, n, t), window._liff.postMessage(e, r, n, JSON.stringify(t))
         }
 
-        function bn(e, t, n) {
+        function mn(e, t, n) {
             return void 0 === t && (t = {}), void 0 === n && (n = {
                 once: !0
             }), ot() ? (n = P({
@@ -2258,9 +2260,9 @@
             }))) : Promise.reject(Ce(X, "Invalid featureToken for client features"))
         }
 
-        function mn() {
+        function bn() {
             var e = Et();
-            null !== e && ("ios" === Ot() && ve(e, "9.19") >= 0 || "android" === Ot() && ve(e, "11.6.0") >= 0) ? location.href = "liff://close" : window._liff && window._liff.postMessage ? null !== e && ve(e, "10.15.0") >= 0 ? "ios" === Ot() ? window._liff.postMessage("closeWindow", "") : window._liff.postMessage("closeWindow", "", "", "") : bn("closeWindow") : window.close()
+            null !== e && ("ios" === Ot() && ve(e, "9.19") >= 0 || "android" === Ot() && ve(e, "11.6.0") >= 0) ? location.href = "liff://close" : window._liff && window._liff.postMessage ? null !== e && ve(e, "10.15.0") >= 0 ? "ios" === Ot() ? window._liff.postMessage("closeWindow", "") : window._liff.postMessage("closeWindow", "", "", "") : mn("closeWindow") : window.close()
         }! function(e) {
             function t() {
                 return null !== e && e.apply(this, arguments) || this
@@ -2273,7 +2275,7 @@
                 configurable: !0
             }), t.prototype.install = function() {
                 return function() {
-                    return mn()
+                    return bn()
                 }
             }
         }(H);
@@ -2330,11 +2332,11 @@
             An.setItem("subWindowStatusUpdated", String(e))
         }
 
-        function jn(e) {
+        function Fn(e) {
             En = e
         }
 
-        function Fn() {
+        function jn() {
             return En
         }
 
@@ -2433,7 +2435,7 @@
                             break;
                         case ue.CANCEL:
                         case ue.SUBMIT:
-                            xn(!0), window.clearInterval(Nn()), window.removeEventListener("message", Vn), In(o, i), null === (t = Fn()) || void 0 === t || t.postMessage({
+                            xn(!0), window.clearInterval(Nn()), window.removeEventListener("message", Vn), In(o, i), null === (t = jn()) || void 0 === t || t.postMessage({
                                 type: o
                             }, Un());
                             break;
@@ -2472,8 +2474,8 @@
 
         function Jn(e) {
             if (void 0 === e && (e = !1), Kn(), xn(!1), e) {
-                var t = Fn();
-                t && (t.close(), jn(null))
+                var t = jn();
+                t && (t.close(), Fn(null))
             }
         }
 
@@ -2523,10 +2525,10 @@
                                     }))
                                 }, a = function() {
                                     for (var t = [], n = 0; n < arguments.length; n++) t[n] = arguments[n];
-                                    $n = null, e.onSuccess.apply(e, j([], x(t), !1))
+                                    $n = null, e.onSuccess.apply(e, F([], x(t), !1))
                                 }, s = function() {
                                     for (var t = [], n = 0; n < arguments.length; n++) t[n] = arguments[n];
-                                    $n = null, e.onError.apply(e, j([], x(t), !1))
+                                    $n = null, e.onError.apply(e, F([], x(t), !1))
                                 }, c = Date.now(), null === $n && ($n = c), u = c - $n, i >= 10 || u > 6e5) return s(Ce(J, "Failed to connect")), [2];
                             w.label = 1;
                         case 1:
@@ -2676,7 +2678,7 @@
         }
 
         function er(e) {
-            return jt.subwindowOpen(), Je() ? Zn(e) : function(e) {
+            return Ft.subwindowOpen(), Je() ? Zn(e) : function(e) {
                 var t;
                 return k(this, void 0, void 0, (function() {
                     var n, r, i, o, a, s, c, u, l, f, d;
@@ -2685,16 +2687,16 @@
                             case 0:
                                 return (n = De(e.url)) ? (Jn(!0), [4, qn()]) : [2, Promise.reject(Ce($, "params.url must be liff url or mini url"))];
                             case 1:
-                                return h.sent(), jn("ios" !== Ot() || We() ? window.open("", "liffsubwindow", "width=480, height=640, menubar=no, toolbar=no, scrollbars=yes") : window.open()), r = e.url, i = e.appData, (o = new URL(r)).searchParams.append(le, "true"), [4, Rn()];
+                                return h.sent(), Fn("ios" !== Ot() || We() ? window.open("", "liffsubwindow", "width=480, height=640, menubar=no, toolbar=no, scrollbars=yes") : window.open()), r = e.url, i = e.appData, (o = new URL(r)).searchParams.append(le, "true"), [4, Rn()];
                             case 2:
                                 return a = h.sent(), o.searchParams.append(Qt, a.identification.identifier), o.searchParams.append(Yt, a.identification.cryptoKey), o.hostname = function(e) {
                                     var t = x(e.split(".")),
                                         n = t[0],
                                         r = t.slice(1);
-                                    return j(["".concat(n, "-ext")], x(r), !1).join(".")
+                                    return F(["".concat(n, "-ext")], x(r), !1).join(".")
                                 }(o.hostname), s = o.toString(), [4, gn(n)];
                             case 3:
-                                if (c = h.sent(), u = c.origin, l = c.subwindowCommonModule, !(f = Fn())) throw Ce(Z);
+                                if (c = h.sent(), u = c.origin, l = c.subwindowCommonModule, !(f = jn())) throw Ce(Z);
                                 if (!l) return f.close(), [2];
                                 ! function(e) {
                                     _n = e
@@ -2707,7 +2709,7 @@
                                 throw d = h.sent(), f.close(), d;
                             case 7:
                                 return f.location.href = s, p = function(e, t) {
-                                        var n = Fn(),
+                                        var n = jn(),
                                             r = {
                                                 type: fe
                                             };
@@ -2718,8 +2720,8 @@
                                     function(e) {
                                         Cn = e
                                     }(window.setInterval((function() {
-                                        var e = Fn();
-                                        e && e.closed && (Kn(), jn(null), !1 === Ln() && (xn(!0), In(ue.CLOSE, {})))
+                                        var e = jn();
+                                        e && e.closed && (Kn(), Fn(null), !1 === Ln() && (xn(!0), In(ue.CLOSE, {})))
                                     }), 100)), [2]
                         }
                         var p
@@ -2800,7 +2802,7 @@
                             case 1:
                                 t.sent(), t.label = 2;
                             case 2:
-                                return mn(), [2]
+                                return bn(), [2]
                         }
                     }))
                 }))
@@ -2812,9 +2814,9 @@
                             eventName: ue.CLOSE
                         }), [2, new Promise((function(e) {
                             setTimeout((function() {
-                                mn(), e()
+                                bn(), e()
                             }), 100)
-                        }))]) : (mn(), [2, Promise.resolve()])
+                        }))]) : (bn(), [2, Promise.resolve()])
                     }))
                 }))
             }()
@@ -2900,7 +2902,7 @@
                     try {
                         for (var o = L(e.fns), a = o.next(); !a.done; a = o.next()) {
                             var s = a.value;
-                            s.apply(void 0, j([], x(r), !1))
+                            s.apply(void 0, F([], x(r), !1))
                         }
                     } catch (W) {
                         t = {
@@ -2928,7 +2930,7 @@
                                 case 0:
                                     e = [];
                                     try {
-                                        for (n = L(this.fns), r = n.next(); !r.done; r = n.next()) i = r.value, e.push(i.apply(void 0, j([], x(t), !1)))
+                                        for (n = L(this.fns), r = n.next(); !r.done; r = n.next()) i = r.value, e.push(i.apply(void 0, F([], x(t), !1)))
                                     } catch (W) {
                                         o = {
                                             error: W
@@ -2964,7 +2966,7 @@
                     response_type: "code",
                     code_challenge_method: "S256",
                     code_challenge: r,
-                    liff_sdk_version: "2.23.0"
+                    liff_sdk_version: "2.23.1"
                 };
                 e && e.redirectUri && (o.redirect_uri = e.redirectUri), Tt() && !Je() && ((null === (t = Dn()) || void 0 === t ? void 0 : t.isReady()) ? o.redirect_uri = window.location.href : o.disable_auto_login = "true"),
                     function(e) {
@@ -2994,15 +2996,15 @@
                     this.hooks.before.call(e), vr(e)
                 }, t
             }(H),
-            br = "undefined" == typeof navigator ? "en" : null !== (ur = navigator.language) && void 0 !== ur ? ur : "en",
-            mr = null;
+            mr = "undefined" == typeof navigator ? "en" : null !== (ur = navigator.language) && void 0 !== ur ? ur : "en",
+            br = null;
 
         function gr(e) {
             return k(this, void 0, void 0, (function() {
                 return A(this, (function(t) {
                     switch (t.label) {
                         case 0:
-                            return br = e, [4, yr()];
+                            return mr = e, [4, yr()];
                         case 1:
                             return t.sent(), [2]
                     }
@@ -3023,22 +3025,22 @@
                                 }
                             })];
                         case 1:
-                            return e = n.sent(), t = "".concat(br), !e.languages[t] && br.includes("-") && (t = br.split("-")[0]), e.languages[t] || (t = "en"), [4, Kt("".concat("https://liffsdk.line-scdn.net/xlt", "/").concat(e.languages[t]), {
+                            return e = n.sent(), t = "".concat(mr), !e.languages[t] && mr.includes("-") && (t = mr.split("-")[0]), e.languages[t] || (t = "en"), [4, Kt("".concat("https://liffsdk.line-scdn.net/xlt", "/").concat(e.languages[t]), {
                                 method: "GET",
                                 headers: {
                                     Accept: "application/json"
                                 }
                             })];
                         case 2:
-                            return mr = n.sent(), [2]
+                            return br = n.sent(), [2]
                     }
                 }))
             }))
         }
 
         function Ir(e) {
-            if (null === mr) throw Ce(z, "please call xlt after liff.init");
-            return mr[e]
+            if (null === br) throw Ce(z, "please call xlt after liff.init");
+            return br[e]
         }
         var Sr = new(function(e) {
                 function t() {
@@ -3126,7 +3128,7 @@
                 f = e.baseBackgroundColor,
                 d = e.baseTextColor,
                 h = e.lightButtonBorderColor;
-            _r("--liff-base-background-color", f), _r("--liff-base-text-color", d), _r("--liff-base-background-rgb-color", me(f)), _r("--liff-base-text-rgb-color", me(d)), _r("--liff-light-button-border-color", h), _r("--liff-title-text-color", r), _r("--liff-title-background-color", a), _r("--liff-title-button-color", o), _r("--liff-icon-color", t), _r("--liff-status-bar-color", n), _r("--liff-title-subtext-color", i), _r("--liff-progress-bar-color", s), _r("--liff-progress-background-color", c), _r("--liff-title-button-area-background-color", we(u)), _r("--liff-title-button-area-border-color", we(l))
+            _r("--liff-base-background-color", f), _r("--liff-base-text-color", d), _r("--liff-base-background-rgb-color", be(f)), _r("--liff-base-text-rgb-color", be(d)), _r("--liff-light-button-border-color", h), _r("--liff-title-text-color", r), _r("--liff-title-background-color", a), _r("--liff-title-button-color", o), _r("--liff-icon-color", t), _r("--liff-status-bar-color", n), _r("--liff-title-subtext-color", i), _r("--liff-progress-bar-color", s), _r("--liff-progress-background-color", c), _r("--liff-title-button-area-background-color", we(u)), _r("--liff-title-button-area-border-color", we(l))
         }
 
         function _r(e, t) {
@@ -3198,28 +3200,28 @@
 
         function xr(e, t) {
             return k(this, void 0, void 0, (function() {
-                var n, r, i, o, a, s, c, u, l, f, d, h, p, v, w, b;
-                return A(this, (function(m) {
-                    switch (m.label) {
+                var n, r, i, o, a, s, c, u, l, f, d, h, p, v, w, m;
+                return A(this, (function(b) {
+                    switch (b.label) {
                         case 0:
                             return n = e.split("."), r = x(n, 3), i = r[0], o = r[1], a = r[2], s = JSON.parse(pe.decode(i)), c = JSON.parse(pe.decodeUnicode(o)), u = ge(pe.decode(a)), l = ge("".concat(i, ".").concat(o)), [4, Ar()];
                         case 1:
-                            if (f = m.sent(), !(d = f.keys.find((function(e) {
+                            if (f = b.sent(), !(d = f.keys.find((function(e) {
                                     return e.kid === s.kid
                                 })))) return [3, 6];
                             if (delete d.alg, "ES256" !== s.alg) throw Ce(Y, 'Invalid "alg" value in ID_TOKEN');
-                            h = void 0, m.label = 2;
+                            h = void 0, b.label = 2;
                         case 2:
-                            return m.trys.push([2, 4, , 5]), [4, Lr(d, l, u)];
+                            return b.trys.push([2, 4, , 5]), [4, Lr(d, l, u)];
                         case 3:
-                            return h = m.sent(), [3, 5];
+                            return h = b.sent(), [3, 5];
                         case 4:
-                            throw p = m.sent(), Ce(Y, "".concat("Failed to use Crypto API to verify ID_TOKEN", ": ").concat(p));
+                            throw p = b.sent(), Ce(Y, "".concat("Failed to use Crypto API to verify ID_TOKEN", ": ").concat(p));
                         case 5:
                             if (h) {
-                                if (v = c.iss !== "https://access.".concat("line.me"), w = c.aud !== t, b = 1e3 * c.exp < Date.now(), v) throw Ce(Y, 'Invalid "iss" value in ID_TOKEN');
+                                if (v = c.iss !== "https://access.".concat("line.me"), w = c.aud !== t, m = 1e3 * c.exp < Date.now(), v) throw Ce(Y, 'Invalid "iss" value in ID_TOKEN');
                                 if (w) throw Ce(Y, 'Invalid "aud" value in ID_TOKEN');
-                                if (b) throw Ce(Y, 'Invalid "exp" value in ID_TOKEN');
+                                if (m) throw Ce(Y, 'Invalid "exp" value in ID_TOKEN');
                                 return [2, c]
                             }
                             throw Ce(Y, "Invalid signature in ID_TOKEN");
@@ -3232,7 +3234,7 @@
             }))
         }
 
-        function jr(e) {
+        function Fr(e) {
             var t = e.split(".");
             if (t[1]) try {
                 var n = t[1].replace(/-/g, "+").replace(/_/g, "/");
@@ -3243,7 +3245,7 @@
             return null
         }
 
-        function Fr(e) {
+        function jr(e) {
             var t = e.pathname,
                 n = e.query,
                 r = n ? "?".concat(Ae(n)) : "",
@@ -3323,7 +3325,7 @@
                                 mst_challenge: rt(),
                                 mst_verifier: $e(oe.MST_VERIFIER),
                                 msit: $e(oe.MSIT)
-                            }, t), Rr() ? mt() ? [4, Br(e)] : [3, 2] : [3, 3];
+                            }, t), Rr() ? bt() ? [4, Br(e)] : [3, 2] : [3, 3];
                         case 1:
                             r = o.sent().featureToken, n.feature_token || (n.feature_token = r), o.label = 2;
                         case 2:
@@ -3336,14 +3338,14 @@
         }
 
         function Wr(e) {
-            if (e.persisted && Ft("multipleLiffTransition"))
+            if (e.persisted && jt("multipleLiffTransition"))
                 if ("ios" === Ot()) window.location.reload();
                 else {
                     var t = qe().liffId,
                         n = ot();
                     if (!t) throw Ce(z, "Invalid LIFF ID.");
                     if (!n) throw Ce(X, "Invalid featureToken for client features");
-                    Fr({
+                    jr({
                         pathname: "app/".concat(t),
                         query: {
                             feature_token: n
@@ -3355,7 +3357,7 @@
         function Hr(e) {
             var t, n;
             return k(this, void 0, void 0, (function() {
-                var r, i, o, a, s, c, u, l, f, d, h, p, v, w, b, m, g;
+                var r, i, o, a, s, c, u, l, f, d, h, p, v, w, m, b, g;
                 return A(this, (function(y) {
                     switch (y.label) {
                         case 0:
@@ -3376,11 +3378,11 @@
                         case 2:
                             if (r = y.sent(), i = r.access_token, o = r.context_token, a = r.feature_token, s = r.id_token, c = r.client_id, u = r.mst_verifier, l = r.mst_challenge, f = r.msit, o) {
                                 if ("string" != typeof o) throw Ce(z, "Cannot get context token, perhaps there is an incorrect parameter in permanent link");
-                                Qe(jr(o))
+                                Qe(Fr(o))
                             }
                             if (void 0 !== (null === (t = Xe()) || void 0 === t ? void 0 : t.liffId) && (null === (n = Xe()) || void 0 === n ? void 0 : n.liffId) !== e.liffId) throw Ce(z, "Invalid LIFF ID");
                             return !Tt() && a && (function(e, t) {
-                                Ft("multipleLiffTransition") && Fr({
+                                jt("multipleLiffTransition") && jr({
                                     pathname: "app/".concat(e),
                                     query: {
                                         feature_token: t
@@ -3392,7 +3394,7 @@
                                 ze(oe.MST_VERIFIER, e)
                             }(u), c && it(c), f && function(e) {
                                 ze(oe.MSIT, e)
-                            }(f), window.addEventListener("pageshow", Wr), mt() || a && i ? [3, 5] : Rr() ? (d = Ne(location.href, {
+                            }(f), window.addEventListener("pageshow", Wr), bt() || a && i ? [3, 5] : Rr() ? (d = Ne(location.href, {
                                 "liff.hback": "2"
                             }), vr({
                                 redirectUri: d
@@ -3409,13 +3411,13 @@
                         case 7:
                             return [4, Dr(f, u)];
                         case 8:
-                            return (b = y.sent()) ? (function(e) {
+                            return (m = y.sent()) ? (function(e) {
                                 ze(oe.MST, e)
-                            }(b), [4, cr({
-                                mst: b
+                            }(m), [4, cr({
+                                mst: m
                             })]) : [3, 10];
                         case 9:
-                            (m = y.sent().data) && tt(JSON.stringify(m)), y.label = 10;
+                            (b = y.sent().data) && tt(JSON.stringify(b)), y.label = 10;
                         case 10:
                             return s && !st() && ct(s), s && c && !vt() ? [4, xr(s, c)] : [3, 12];
                         case 11:
@@ -3441,7 +3443,7 @@
                             })];
                         case 1:
                             if (o = c.sent(), !(a = o.contextToken)) throw Ce(z, "Can not get context from server.");
-                            if (!(s = jr(a))) throw Ce(z, "Invalid context token.");
+                            if (!(s = Fr(a))) throw Ce(z, "Invalid context token.");
                             return [2, s]
                     }
                 }))
@@ -3495,7 +3497,7 @@
                                             case 2:
                                                 (o = s.sent()) && wt(o), s.label = 3;
                                             case 3:
-                                                return (a = ke(location.hash).context_token) ? (Qe(jr(a)), [3, 6]) : [3, 4];
+                                                return (a = ke(location.hash).context_token) ? (Qe(Fr(a)), [3, 6]) : [3, 4];
                                             case 4:
                                                 return [4, Gr()];
                                             case 5:
@@ -3544,10 +3546,10 @@
                                 return k(a, void 0, void 0, (function() {
                                     var r, i;
                                     return A(this, (function(o) {
-                                        return r = t.context, i = r.data, r.eventName === ue.INIT && (null == i ? void 0 : i.subWindowId) !== n && mn(), r.eventName !== ue.CANCEL && r.eventName !== ue.SUBMIT || e.teardown(), [2]
+                                        return r = t.context, i = r.data, r.eventName === ue.INIT && (null == i ? void 0 : i.subWindowId) !== n && bn(), r.eventName !== ue.CANCEL && r.eventName !== ue.SUBMIT || e.teardown(), [2]
                                     }))
                                 }))
-                            })), mt() && e.send({
+                            })), bt() && e.send({
                                 eventName: ue.INIT,
                                 data: {
                                     subWindowId: n,
@@ -3645,7 +3647,7 @@
                             if (!e.liffId) throw Ce(Q, "liffId is necessary for liff.init()");
                             return function(e) {
                                 window.__liffConfig = e
-                            }(e), !Je() && mt() && (function() {
+                            }(e), !Je() && bt() && (function() {
                                 var e = qe();
                                 return ye("".concat(ne, ":").concat(oe.EXPIRES, ":").concat(e.liffId))
                             }() || Ht()), n = ke(window.location.search), !Tt() || Je() ? [3, 2] : [4, Jr()];
@@ -3653,7 +3655,7 @@
                             r.sent(), r.label = 2;
                         case 2:
                             if (n.error && n.liffOAuth2Error) throw a = n.error, s = n.error_description.replace(/\+/g, " "), c = "".concat(a, ": ").concat(s), Ce(z, c);
-                            return i = n.code, o = dt(), Boolean(i && !mt() && o && o.codeVerifier) ? [4, Kr(n.liffClientId)] : [3, 4];
+                            return i = n.code, o = dt(), Boolean(i && !bt() && o && o.codeVerifier) ? [4, Kr(n.liffClientId)] : [3, 4];
                         case 3:
                             r.sent(), r.label = 4;
                         case 4:
@@ -3661,7 +3663,7 @@
                         case 5:
                             return r.sent(), [3, 8];
                         case 6:
-                            return mt() ? [3, 8] : [4, Gr()];
+                            return bt() ? [3, 8] : [4, Gr()];
                         case 7:
                             r.sent(), r.label = 8;
                         case 8:
@@ -3671,7 +3673,7 @@
                         case 10:
                             return r.sent(),
                                 function(e) {
-                                    var t = Fe(je(e));
+                                    var t = je(Fe(e));
                                     window.history.replaceState(history.state, "", t)
                                 }(window.location.href), [2]
                     }
@@ -3808,7 +3810,7 @@
                                         }), t.addEventListener ? t.addEventListener("change", Cr) : t.addListener && t.addListener(Cr)
                                     }(), [4, this.internalHooks.beforeSuccess.call()];
                             case 4:
-                                return i.sent(), !e.withLoginOnExternalBrowser || mt() ? [3, 6] : (vr(), [4, new Promise((function() {}))]);
+                                return i.sent(), !e.withLoginOnExternalBrowser || bt() ? [3, 6] : (vr(), [4, new Promise((function() {}))]);
                             case 5:
                                 i.sent(), i.label = 6;
                             case 6:
@@ -3892,7 +3894,7 @@
 
         function ri() {
             var e, t, n = Xe();
-            return !!n && "square_chat" !== n.type && (Ft("skipChannelVerificationScreen") || !Je() && (null === (t = null === (e = n.availability) || void 0 === e ? void 0 : e.skipChannelVerificationScreen) || void 0 === t ? void 0 : t.permission))
+            return !!n && "square_chat" !== n.type && (jt("skipChannelVerificationScreen") || !Je() && (null === (t = null === (e = n.availability) || void 0 === e ? void 0 : e.skipChannelVerificationScreen) || void 0 === t ? void 0 : t.permission))
         }
 
         function ii() {
@@ -4012,7 +4014,7 @@
                             case 4:
                                 i && r.pop(), a.label = 5;
                             case 5:
-                                return [4, e.apply(void 0, j([], x(r), !1))];
+                                return [4, e.apply(void 0, F([], x(r), !1))];
                             case 6:
                                 return [2, a.sent()]
                         }
@@ -4085,7 +4087,7 @@
                         }(l, u);
                         return "".concat(c, "?").concat("is_liff_external_open_window", "=").concat(!!t).concat(f)
                     }(n, i))
-                } else bn("openWindow", e);
+                } else mn("openWindow", e);
             else window.open(e.url, "_blank")
         }! function(e) {
             function t() {
@@ -4113,7 +4115,7 @@
             return Promise.reject(Ce($, e))
         }
 
-        function bi(e) {
+        function mi(e) {
             if (! function(e) {
                     return Array.isArray(e) && e.every(vi)
                 }(e)) return wi("Parameter 'messages' must be an array of { type, ... }");
@@ -4123,9 +4125,9 @@
                 body: JSON.stringify({
                     messages: e
                 })
-            }).catch(mi)
+            }).catch(bi)
         }
-        var mi = function(e) {
+        var bi = function(e) {
             if ("403" === e.code) {
                 var t = "12.0.0" === Et(),
                     n = "ios" === Ot(),
@@ -4145,7 +4147,7 @@
                 enumerable: !1,
                 configurable: !0
             }), t.prototype.install = function() {
-                return fi(bi, "chat_message.write")
+                return fi(mi, "chat_message.write")
             }
         }(H);
 
@@ -4172,7 +4174,7 @@
                 return A(this, (function(n) {
                     switch (n.label) {
                         case 0:
-                            if (!mt()) return [3, 6];
+                            if (!bt()) return [3, 6];
                             n.label = 1;
                         case 1:
                             return n.trys.push([1, 5, , 6]), (e = vt()) && e.sub ? [2, e.sub] : [3, 2];
@@ -4330,7 +4332,7 @@
                                         version: "current"
                                     }), this.uts.init(c, u), [4, Ii()];
                                 case 5:
-                                    (l = d.sent()) && (R.debug("[LIFFUTS][mid] ".concat(l)), this.uts.setMid(l)), (null == t ? void 0 : t.tid) && (R.debug("[LIFFUTS][tid] ".concat(t.tid)), this.uts.setTid(t.tid)), this.referrer && (R.debug("liff.ref.referrer", this.referrer), this.uts.setSessionParams(this.referrer)), i && this.setLiffId(i), this.setIsLoggedIn(mt()), this.setVersion("2.23.0"), f = je(location.href), R.debug("[LIFFUTS][url] ".concat(f)), this.uts.setUrl(f), this.liffCore.analytics = this.uts, this.injected = !0, d.label = 6;
+                                    (l = d.sent()) && (R.debug("[LIFFUTS][mid] ".concat(l)), this.uts.setMid(l)), (null == t ? void 0 : t.tid) && (R.debug("[LIFFUTS][tid] ".concat(t.tid)), this.uts.setTid(t.tid)), this.referrer && (R.debug("liff.ref.referrer", this.referrer), this.uts.setSessionParams(this.referrer)), i && this.setLiffId(i), this.setIsLoggedIn(bt()), this.setVersion("2.23.1"), f = Fe(location.href), R.debug("[LIFFUTS][url] ".concat(f)), this.uts.setUrl(f), this.liffCore.analytics = this.uts, this.injected = !0, d.label = 6;
                                 case 6:
                                     return [2]
                             }
@@ -4378,7 +4380,7 @@
             },
             ki = function(e, t) {
                 var n, r, i, o = function(e, t) {
-                    for (var n = j([], x(e), !1), r = 0; r < t.length; r++) {
+                    for (var n = F([], x(e), !1), r = 0; r < t.length; r++) {
                         var i = t[r],
                             o = n.indexOf(i);
                         o > -1 && n.splice(o, 1)
@@ -4405,7 +4407,7 @@
                 if (n.username !== r.username || n.password !== r.password) throw Ce($, "invalid URL.");
                 if (r.origin !== n.origin || !Li(r.pathname, n.pathname)) throw Ce($, "invalid URL.")
             },
-            ji = function(e) {
+            Fi = function(e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.extraParams = "", t.getAndValidateContext = function() {
@@ -4440,11 +4442,11 @@
                         t.extraParams && h.push(t.extraParams);
                         for (var v = 0; v < p.length; v++) {
                             var w = p[v],
-                                b = h.indexOf(w);
-                            b > -1 && h.splice(b, 1)
+                                m = h.indexOf(w);
+                            m > -1 && h.splice(m, 1)
                         }
-                        var m = h.join("&"),
-                            g = "".concat(c).concat("" !== m ? "?".concat(m) : "").concat(f ? "#".concat(f) : "");
+                        var b = h.join("&"),
+                            g = "".concat(c).concat("" !== b ? "?".concat(b) : "").concat(f ? "#".concat(f) : "");
                         return "".concat(re).concat(qe().liffId).concat(g)
                     }, t.createUrlBy = function(e) {
                         return k(t, void 0, void 0, (function() {
@@ -4472,7 +4474,7 @@
                     configurable: !0
                 }), t
             }(H),
-            Fi = new ji,
+            ji = new Fi,
             Ni = function() {
                 function e(e, t) {
                     var n = this;
@@ -4503,7 +4505,7 @@
         function Ui() {
             return k(this, void 0, void 0, (function() {
                 return A(this, (function(e) {
-                    return jt.scanCodeV2(), Si && Si.destroy(), [2, new Promise((function(e, t) {
+                    return Ft.scanCodeV2(), Si && Si.destroy(), [2, new Promise((function(e, t) {
                         Si = new Ni(e, t), lr.open({
                             url: "https://liff.line.me/1656359117-jxmx5e11"
                         }).catch((function(e) {
@@ -4786,7 +4788,7 @@
                             return A(this, (function(u) {
                                 switch (u.label) {
                                     case 0:
-                                        if (jt.shareTargetPicker(), !e || !Array.isArray(e) || 0 === e.length) throw Ce($, "no proper argument");
+                                        if (Ft.shareTargetPicker(), !e || !Array.isArray(e) || 0 === e.length) throw Ce($, "no proper argument");
                                         if (e.length > 5) throw Ce($, "exceed the limit of num of messages");
                                         if (!(t = qe().liffId)) throw Ce(Q);
                                         window.liff && (r = window.liff).analytics && Ei(r.analytics), i = void 0 === n.isMultiple || n.isMultiple, u.label = 1;
@@ -4898,24 +4900,26 @@
         }
 
         function Yi(e) {
+            var t;
+            if (void 0 === e.url || null === e.url || "" === e.url) throw Ce($, "no proper argument");
+            var n = Xe();
+            if (!(null === (t = null == n ? void 0 : n.availability.addToHomeLineScheme) || void 0 === t ? void 0 : t.permission)) {
+                if (Me(e.url)) throw Ce(X, "No permission to specify line schema in url.");
+                if (e.description) throw Ce(X, "No permission to specify description.")
+            }
+            if (!Me(e.url)) {
+                if (!n) throw Ce(X, "Could not get Context from server.");
+                n.liffId !== De(e.url) && xi(e.url, n.endpointUrl)
+            }
+        }
+
+        function Zi(e) {
             return k(this, void 0, void 0, (function() {
                 var t;
                 return A(this, (function(n) {
                     switch (n.label) {
                         case 0:
-                            if (function(e) {
-                                    var t;
-                                    if (void 0 === e.url || null === e.url || "" === e.url) throw Ce($, "no proper argument");
-                                    var n = Xe();
-                                    if (!(null === (t = null == n ? void 0 : n.availability.addToHomeLineScheme) || void 0 === t ? void 0 : t.permission)) {
-                                        if (Me(e.url)) throw Ce(X, "No permission to specify line schema in url.");
-                                        if (e.description) throw Ce(X, "No permission to specify description.")
-                                    }
-                                    if (!Me(e.url)) {
-                                        if (!n) throw Ce(X, "Could not get Context from server.");
-                                        n.liffId !== De(e.url) && xi(e.url, n.endpointUrl)
-                                    }
-                                }(e), !(t = qe().liffId)) throw Ce(z, "Invalid LIFF ID.");
+                            if (!(t = qe().liffId)) throw Ce(z, "Invalid LIFF ID.");
                             return "ios" === Ot() ? [4, Qi(t, e)] : [3, 2];
                         case 1:
                             return n.sent(), [3, 4];
@@ -4929,7 +4933,7 @@
                 }))
             }))
         }
-        var Zi = function(e) {
+        var eo = function(e) {
                 function t() {
                     return null !== e && e.apply(this, arguments) || this
                 }
@@ -4946,7 +4950,7 @@
                                 return A(this, (function(t) {
                                     switch (t.label) {
                                         case 0:
-                                            return jt.createShortcutOnHomeScreen(), [4, Yi(e)];
+                                            return Yi(e), Ft.createShortcutOnHomeScreen(), [4, Zi(e)];
                                         case 1:
                                             return t.sent(), [2]
                                     }
@@ -4956,7 +4960,7 @@
                     }
                 }, t
             }(H),
-            eo = function(e) {
+            to = function(e) {
                 function t() {
                     return null !== e && e.apply(this, arguments) || this
                 }
@@ -4973,7 +4977,7 @@
                                 return A(this, (function(t) {
                                     switch (t.label) {
                                         case 0:
-                                            return jt.internalCreateShortcutOnHomeScreen(), [4, Yi(e)];
+                                            return Yi(e), Ft.internalCreateShortcutOnHomeScreen(), [4, Zi(e)];
                                         case 1:
                                             return t.sent(), [2]
                                     }
@@ -4983,7 +4987,7 @@
                     }
                 }, t
             }(H),
-            to = Object.defineProperties({}, {
+            no = Object.defineProperties({}, {
                 getOS: {
                     value: Ot,
                     enumerable: !0,
@@ -5005,7 +5009,7 @@
                     writable: !0
                 },
                 isLoggedIn: {
-                    value: mt,
+                    value: bt,
                     enumerable: !0,
                     writable: !0
                 },
@@ -5040,7 +5044,7 @@
                     writable: !0
                 },
                 closeWindow: {
-                    value: mn,
+                    value: bn,
                     enumerable: !0,
                     writable: !0
                 },
@@ -5070,7 +5074,7 @@
                     writable: !0
                 },
                 isApiAvailable: {
-                    value: Ft,
+                    value: jt,
                     enumerable: !0,
                     writable: !0
                 },
@@ -5080,7 +5084,7 @@
                     writable: !0
                 },
                 sendMessages: {
-                    value: fi(bi, "chat_message.write"),
+                    value: fi(mi, "chat_message.write"),
                     enumerable: !0,
                     writable: !0
                 },
@@ -5122,7 +5126,7 @@
                     writable: !0
                 },
                 _call: {
-                    value: bn,
+                    value: mn,
                     enumerable: !0,
                     writable: !0
                 },
@@ -5142,12 +5146,12 @@
                     writable: !0
                 }
             }),
-            no = new W,
-            ro = new M(no, to),
-            io = new G(no, ro).install();
-        [new G(no, ro), new wr, new ei, new Ti, Ri, Fi, St, di, Ji, Sr, new Mt, new Zi, new eo].forEach((function(e) {
-            io.call(to, e)
+            ro = new W,
+            io = new M(ro, no),
+            oo = new G(ro, io).install();
+        [new G(ro, io), new wr, new ei, new Ti, Ri, ji, St, di, Ji, Sr, new Mt, new eo, new to].forEach((function(e) {
+            oo.call(no, e)
         }));
-        const oo = to
+        const ao = no
     })(), r = r.default
 })()));
